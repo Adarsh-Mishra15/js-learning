@@ -16,7 +16,7 @@ let isLoggedIn = false
 // boolean ==> true//false
 // null ==> standalone value
 // undefined ==> value not assigned
-// symbole ==> unique
+// symbol ==> unique
 
 
 // object
