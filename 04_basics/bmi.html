@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+
+    <div class="bmi">
+        <h1>BMI Calculator</h1><br>
+        <form action="">
+            <label for="height">Height in cm</label><br>
+            <input type="number" id="height"><br>
+            <label for="weight">weight in kg</label><br>
+            <input type="number" name="weight" id="weight"><br><br>
+            <div id="result"></div><br><br>
+            <button class="button" type="submit">Calculate</button>
+        </form>
+    </div>
+</body>
+<script>
+    const form = document.querySelector('form')
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault()
+
+        const height = parseInt(document.querySelector('#height').value)
+        const weight = parseInt(document.querySelector('#weight').value)
+        const result = document.querySelector('#result')
+
+
+        if (height === '' || height < 0 || isNaN(height)) {
+            results.innerHTML = `Please give a valid height: ${height}`
+        } else
+        if (weight === '' || weight < 0 || isNaN(weight)) {
+            results.innerHTML = `Please give a valid weight: ${weight}`
+        } else {
+            const bmi = (weight / ((height * height) / 10000)).toFixed(2)
+                // shoe the result
+            result.style.color = "Red"
+            result.innerHTML = `<span>${bmi}</span><br><span>You are overweight</span>`
+        }
+
+        // result.innerHTML = `${height}`
+    })
+</script>
+
+</html>

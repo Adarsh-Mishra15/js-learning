@@ -1,0 +1,62 @@
+<!-- Project 1-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Changer</title>
+    <style>
+        .button {
+            padding: 50px;
+            margin: 10px;
+        }
+        
+        #grey {
+            background-color: grey;
+            border: 3px solid;
+        }
+        
+        #white {
+            background-color: white;
+            border: 3px solid;
+        }
+        
+        #blue {
+            background-color: blue;
+            border: 3px solid;
+        }
+        
+        #yellow {
+            background-color: yellow;
+            border: 3px solid;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h1>Color scheme Switcher</h1><br><br>
+        <span class="button" id="grey"></span>
+        <span class="button" id="white"></span>
+        <span class="button" id="blue"></span>
+        <span class="button" id="yellow"></span>
+    </div>
+</body>
+<script>
+    const buttons = document.querySelectorAll('.button')
+        // console.log(buttons);
+    const body = document.querySelector("body")
+    buttons.forEach(function(btn) {
+        // console.log(btn);
+        btn.addEventListener('click', function(e) {
+            // console.log(e);
+            // console.log(e.target);
+            body.style.backgroundColor = e.target.id
+        })
+    });
+</script>
+
+</html>
